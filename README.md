@@ -2,15 +2,21 @@
 
 AI 编码工作流：OpenSpec（规划层）+ Superpowers（执行层）+ Karpathy 准则（约束层）。
 
-## 使用方式
+## 快速开始
 
-把这个仓库地址发给你的 AI 编码助手：
+**第一步：** 把以下内容发给你的 AI 编码助手（Claude Code / Cursor / Copilot 等）：
 
 ```
 请按照 https://github.com/lyz-wave/openspec-superpowers-workflow 搭建工作流
 ```
 
-AI 会自动完成安装和配置。
+**第二步：** 等 AI 完成安装和配置。
+
+**第三步：** 开始使用：
+
+```
+/opsx:propose "你想做的事情"
+```
 
 ## 工作流
 
