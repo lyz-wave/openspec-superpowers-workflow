@@ -30,7 +30,7 @@ AI 编码工作流：OpenSpec（规划层）+ Superpowers（执行层）+ Karpat
 | 收敛 | `/superpowers:brainstorming` | 审阅产物、提出精准问题、修正方案 |
 | 方案 | `/superpowers:writing-plans` | 基于 tasks.md 生成执行计划 |
 | 编码（后端） | `/superpowers:test-driven-development` | TDD 实现后端逻辑 |
-| 编码（前端） | `/superpowers:frontend-design` | 设计并实现高质量前端界面 |
+| 编码（前端） | `/frontend-design` | 设计并实现高质量前端界面 |
 | 验证 | `/opsx:verify` | 检查实现是否符合 specs |
 | 归档 | `/opsx:archive` | 归档变更、同步主规格 |
 

@@ -38,14 +38,12 @@ npm install -g @fission-ai/openspec@latest
 openspec --version
 ```
 
-### 3.2 安装 Superpowers + frontend-design
+### 3.2 安装 Superpowers
 
 Superpowers 是 Claude Code 的 skill 集合。手动安装：
 
 ```bash
-# 创建 skill 目录
 mkdir -p ~/.claude/skills/superpowers
-mkdir -p ~/.claude/skills/frontend-design
 ```
 
 **Superpowers 子技能**（放入 `~/.claude/skills/superpowers/`）：
@@ -64,21 +62,33 @@ mkdir -p ~/.claude/skills/frontend-design
 
 每个子技能目录下包含 `SKILL.md`，从 https://github.com/superpowers-ai/superpowers 或你的私有源获取。
 
-**frontend-design 技能**（放入 `~/.claude/skills/frontend-design/SKILL.md`）：
-
-用于前端/UI/可视化场景，生成高质量、有设计感的前端代码，避免通用 AI 美学。从 https://github.com/anthropics/claude-code-skills 或你的私有源获取。
-
 验证：
 
 ```bash
 ls ~/.claude/skills/superpowers/
 # 应列出 brainstorming/ writing-plans/ test-driven-development/ 等
+```
 
+### 3.3 安装 frontend-design（Anthropic 官方插件）
+
+`frontend-design` 是 Anthropic 官方 Claude Code 插件，不属于 Superpowers。
+
+```bash
+mkdir -p ~/.claude/skills/frontend-design
+```
+
+从 https://github.com/anthropics/claude-code/blob/main/plugins/frontend-design/skills/frontend-design/SKILL.md 获取内容，放入 `~/.claude/skills/frontend-design/SKILL.md`。
+
+用于前端/UI/可视化场景，生成高质量、有设计感的前端代码。工作流中通过 `/frontend-design` 调用（不是 `/superpowers:frontend-design`）。
+
+验证：
+
+```bash
 ls ~/.claude/skills/frontend-design/
 # 应列出 SKILL.md
 ```
 
-### 3.3 安装 Karpathy 编码准则
+### 3.4 安装 Karpathy 编码准则
 
 创建 `~/.claude/rules/karpathy.md`，内容如下：
 
@@ -154,7 +164,7 @@ ls ~/.claude/skills/frontend-design/
 **这些准则生效的标志：** diff 中不必要的变更更少、因过度设计导致的重写更少、澄清性提问出现在实现之前而非出错之后。
 ```
 
-### 3.4 项目级初始化
+### 3.5 项目级初始化
 
 每个项目首次使用时：
 
@@ -196,7 +206,7 @@ openspec update
 ### 4.3 编码阶段分流
 
 - 后端 / 逻辑 / 数据处理 → `/superpowers:test-driven-development`
-- 前端 / UI / 可视化 → `/superpowers:frontend-design`
+- 前端 / UI / 可视化 → `/frontend-design`
 - 混合任务 → 先 TDD 后端逻辑，再 frontend-design 前端界面
 - **所有编码必须遵守 karpathy.md**（先想再写、简单至上、手术式修改、目标驱动）
 
@@ -208,7 +218,7 @@ openspec update
 | 收敛 | `/superpowers:brainstorming` | 审阅产物、提出精准问题、修正方案 | 更新后的 OpenSpec 产物 |
 | 方案 | `/superpowers:writing-plans` | 基于 tasks.md 生成详细执行计划 | 实施方案文档 |
 | 编码（后端） | `/superpowers:test-driven-development` | 按 tasks.md 逐项实现后端逻辑 | 代码 |
-| 编码（前端） | `/superpowers:frontend-design` | 设计并实现高质量前端界面 | 代码 |
+| 编码（前端） | `/frontend-design` | 设计并实现高质量前端界面 | 代码 |
 | 验证 | `/opsx:verify` | 检查实现是否符合 specs | 验证报告 |
 | 归档 | `/opsx:archive` | 归档变更、同步主规格 | 归档记录 |
 
@@ -316,7 +326,7 @@ openspec update
 
 ### 编码阶段分流
 - 后端 / 逻辑 / 数据处理 → `/superpowers:test-driven-development`
-- 前端 / UI / 可视化 → `/superpowers:frontend-design`
+- 前端 / UI / 可视化 → `/frontend-design`
 - 混合任务 → 先 TDD 后端逻辑，再 frontend-design 前端界面
 - **所有编码必须遵守 `~/.claude/rules/karpathy.md`**（先想再写、简单至上、手术式修改、目标驱动）
 
@@ -328,7 +338,7 @@ openspec update
 | 收敛 | `/superpowers:brainstorming` | 审阅产物、提出具体问题、修正方案 |
 | 实施方案 | `/superpowers:writing-plans` | 基于 tasks.md 生成详细执行计划 |
 | 编码（后端） | `/superpowers:test-driven-development` | 按 tasks.md 逐项实现后端逻辑，遵守 karpathy.md |
-| 编码（前端） | `/superpowers:frontend-design` | 设计并实现高质量前端界面，遵守 karpathy.md |
+| 编码（前端） | `/frontend-design` | 设计并实现高质量前端界面，遵守 karpathy.md |
 | 验证 | `/opsx:verify` | 检查实现是否符合 specs |
 | 归档 | `/opsx:archive` | 归档变更、同步主规格 |
 

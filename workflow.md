@@ -24,7 +24,7 @@
 
 ### 编码阶段分流
 - 后端 / 逻辑 / 数据处理 → `/superpowers:test-driven-development`
-- 前端 / UI / 可视化 → `/superpowers:frontend-design`
+- 前端 / UI / 可视化 → `/frontend-design`
 - 混合任务 → 先 TDD 后端逻辑，再 frontend-design 前端界面
 - **所有编码必须遵守 `~/.claude/rules/karpathy.md`**（先想再写、简单至上、手术式修改、目标驱动）
 
@@ -36,7 +36,7 @@
 | 收敛 | `/superpowers:brainstorming` | 审阅产物、提出具体问题、修正方案 |
 | 实施方案 | `/superpowers:writing-plans` | 基于 tasks.md 生成详细执行计划 |
 | 编码（后端） | `/superpowers:test-driven-development` | 按 tasks.md 逐项实现后端逻辑，遵守 karpathy.md |
-| 编码（前端） | `/superpowers:frontend-design` | 设计并实现高质量前端界面，遵守 karpathy.md |
+| 编码（前端） | `/frontend-design` | 设计并实现高质量前端界面，遵守 karpathy.md |
 | 验证 | `/opsx:verify` | 检查实现是否符合 specs |
 | 归档 | `/opsx:archive` | 归档变更、同步主规格 |
 
