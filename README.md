@@ -28,9 +28,10 @@ AI 会自动完成安装和配置。
 | 验证 | `/opsx:verify` | 检查实现是否符合 specs |
 | 归档 | `/opsx:archive` | 归档变更、同步主规格 |
 
-## 详细文档
+## 文档
 
-→ [OpenSpec-Superpowers-Workflow-Guide.md](./OpenSpec-Superpowers-Workflow-Guide.md)
+→ [OpenSpec-Superpowers-Workflow-Guide.md](./OpenSpec-Superpowers-Workflow-Guide.md) — 完整搭建手册
+→ [test-workflow.md](./test-workflow.md) — 搭建完成后的可用性测试
 
 ## License
 
